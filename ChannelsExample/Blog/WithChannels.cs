@@ -41,7 +41,7 @@ namespace ChannelsExample.Blog
             // Channels that will be used
             var postPathsChannel = Channel.CreateUnbounded<string>(new UnboundedChannelOptions() { SingleReader = false, SingleWriter = true });
             var frontMatterChannel = Channel.CreateBounded<(string?, FrontMatter?)>(new BoundedChannelOptions(100) { SingleReader = false, SingleWriter = false });
-            var imagesChannel = Channel.CreateBounded<(string?, FrontMatter?, Image)>(new BoundedChannelOptions(10) { SingleReader = false, SingleWriter = false });
+            var imagesChannel = Channel.CreateBounded<(string?, FrontMatter?, Image)>(new BoundedChannelOptions(20) { SingleReader = false, SingleWriter = false });
 
             var stopwatch = new Stopwatch();
             stopwatch.Start();

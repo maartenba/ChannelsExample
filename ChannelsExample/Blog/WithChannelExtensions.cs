@@ -39,7 +39,7 @@ namespace ChannelsExample.Blog
                 .Filter(tuple => tuple.Item2 != null)
                 .PipeAsync(
                     maxConcurrency: 10,
-                    capacity: 10,
+                    capacity: 20,
                     transform: async tuple =>
                     {
                         var (postPath, frontMatter) = tuple;
